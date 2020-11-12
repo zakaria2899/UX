@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap");
+
+:root {
+  --main-header-font: "Roboto Slab", serif;
+  --main-text-font: "Playfair Display", serif;
+  --main-text-fontsdsd: "Kanit", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1025px) {
+  .header {
+    display: none;
+  }
+
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/Hero.jpg);
+    position: relative;
+    display: flex;
+    background-size: cover;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 0;
+  }
+
+  .nav {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    background-color: #6c939a;
+    display: flex;
+    z-index: 5;
+  }
+
+  .nav img {
+    width: 200px;
+  }
+
+  .nav ul {
+    display: flex;
+    list-style: none;
+  }
+  #firstList {
+    width: 20%;
+    display: flex;
+    align-items: center;
+  }
+
+  #secondList {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    font-family: var(--main-header-font);
+  }
+
+  .nav ul li:hover {
+    color: black;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  .container-mapbox {
+    width: 80%;
+    height: 50vh;
+    margin-top: 250px;
+    position: absolute;
+    z-index: 9;
+  }
+
+  .marker {
+    background-image: url("mapbox-icon.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

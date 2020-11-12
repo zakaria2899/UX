@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/mapbox.css" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 80%;
+        height: 50vh;
+
+        
+      }
+
+      .marker {
+        background-image: url("../images/marker.jpg");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 365px;
+  }
+    </style>
+  </head>
+  <body>
+    <!-- Desktop nav-->
+
+    <!--Mobile nav-->
+    <nav class="header">
+      <a href="../index.html" class="logo">
+        <img src="../images/Logo.png" id="logo"
+      /></a>
+      <input class="menu-button" type="checkbox" id="menu-button" />
+      <label class="menu-icon" for="menu-button"
+        ><span class="nav-icon"></span
+      ></label>
+
+      <ul class="menu">
+        <li><a href="#">Shop</a></li>
+        <li class="hidden">
+          <a href="#" class="hidden">Log ind</a>
+        </li>
+        <li><a href="#">Priser</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">Tilmeld</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile div-->
+    <div class="hero" id="heros">
+      <nav class="nav">
+        <ul id="firstList">
+          <li>
+            <a href="../index.html">
+              <img src="../images/Logo.png" id="img" />
+            </a>
+          </li>
+        </ul>
+        <ul id="secondList">
+          <h2><li>SHOP</li></h2>
+          <h2><li>LOG IND</li></h2>
+          <h2><li>PRISER</li></h2>
+          <h2><li>Q&A</li></h2>
+          <h2><li>TILMELD</li></h2>
+        </ul>
+      </nav>
+
+      <div id='map' class="container-mapbox"></div>
+
+      <script>
+      
+      mapboxgl.accessToken = 'pk.eyJ1Ijoia2hpemVyMjMxNiIsImEiOiJja2Zxa2V2MjgwbG9uMnZwNnFybXVjY3kxIn0.xvvNOWTvXe8Sk_4XPrYZhA';
+      
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [10.179, 56.134 ],
+        zoom: 11
+      });
+      
+      // code from the next step will go here!
+      
+
+      var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [10.113, 56.140]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Washington, D.C.'
+    }
+  }
+  ]
+};
+
+
+geojson.features.forEach(function(marker) {
+
+// create a HTML element for each feature
+var el = document.createElement('div');
+el.className = 'marker';
+
+// make a marker for each feature and add to the map
+new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .addTo(map);
+});
+      </script>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

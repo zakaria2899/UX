@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tæl skridt</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Desktop nav-->
+
+    <!--Mobile nav-->
+    <nav class="header">
+      <a href="../index.html" class="logo"
+        ><img src="images/Logo.png" id="logo"
+      /></a>
+      <input class="menu-button" type="checkbox" id="menu-button" />
+      <label class="menu-icon" for="menu-button"
+        ><span class="nav-icon"></span
+      ></label>
+
+      <ul class="menu">
+        <li><a href="#">Shop</a></li>
+        <li class="hidden">
+          <a href="#" class="hidden">Log ind</a>
+        </li>
+        <li><a href="#">Priser</a></li>
+        <li><a href="#">Q&A</a></li>
+        <li><a href="#">Tilmeld</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile div-->
+    <div class="hero" id="heros">
+      <nav class="nav">
+        <ul id="firstList">
+          <li><img src="images/Logo.png" id="img" /></li>
+        </ul>
+        <ul id="secondList">
+          <h2><li>SHOP</li></h2>
+          <h2><li>LOG IND</li></h2>
+          <h2><li>PRISER</li></h2>
+          <h2><li>Q&A</li></h2>
+          <h2><li>TILMELD</li></h2>
+        </ul>
+      </nav>
+
+      <div class="form" id="formShow">
+        <form>
+          <input type="text" placeholder="Fornavn" />
+          <input type="text" placeholder="Efternavn" />
+          <input type="text" placeholder="Vejnavn" id="vejnavn" />
+          <input type="text" placeholder="Postnr." />
+          <input type="text" placeholder="By" />
+          <hr />
+          <input
+            type="text"
+            placeholder="Indtast mobilnummer"
+            id="mobilnummer"
+          />
+          <input
+            type="text"
+            placeholder="Indtast telefonnummer"
+            id="telefonnummer"
+          />
+          <hr />
+          <input type="text" placeholder="E-mailadresse" id="email" />
+
+          <input type="text" placeholder="CPR-nummer" id="cpr-nr" />
+
+          <input type="reset" placeholder="Nulstil" id="nulstil" />
+          <button id="godkend"><a href="html/mapbox.html">Send </a></button>
+        </form>
+      </div>
+
+      <div class="cancer hide" id="hidden">
+        <img src="images/tælskrift-cancer.png" />
+      </div>
+      <div class="button hide" id="dontDisplay">
+        <button id="cta">Tilmeld dig</button>
+      </div>
+      <div class="hero-header hide" id="dontShow">
+        <h1>
+          Tilmeld dig og tæl skridt med hele nationen fra d.9 til d.22 November
+        </h1>
+      </div>
+    </div>
+    <script src="js/script.js" async defer></script>
+  </body>
+</html>
